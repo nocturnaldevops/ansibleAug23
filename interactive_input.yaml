@@ -1,0 +1,23 @@
+---
+- name: playbook to take inputs from a user and perform actions
+  hosts: all
+  become: true
+  vars_prompt:
+    - name: package1
+      prompt: what package do you want to install?
+      private: false
+    - name: name
+      prompt: what is your username?
+      private: false
+    - name: password123
+      prompt: what is your password?
+  tasks:
+    - name: install a package
+      apt:
+        name: "{{package1}}"
+        state: present
+    - name: create a user account
+      user:
+        name: "{{name}}"
+        password: "{{password123}}"
+

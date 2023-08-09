@@ -1,0 +1,16 @@
+---
+- name: playbook to uninstall git maven tree elinks and apache2
+  hosts: all
+  become: true
+  tasks:
+    - name: uninstall packages
+      apt:
+        name: "{{item}}"   
+        state: absent
+      with_items:
+       - tree
+       - maven
+       - git
+       - apache2
+       - elinks
+...

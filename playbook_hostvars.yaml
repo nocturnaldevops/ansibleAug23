@@ -1,0 +1,10 @@
+---
+- name: playbook to install packages from the variables metioned in host_vars folder
+  hosts: 172.31.37.12
+  become: true
+  tasks:
+    - name: install package
+      apt:
+        name: ["{{pkg1}}", "{{pkg2}}"]
+        state: "{{st}}"
+        update_cache: "{{update}}" 

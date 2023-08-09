@@ -1,0 +1,16 @@
+- name: fetch a file from one managed node
+  hosts: 172.31.37.12
+  become: true
+  tasks:
+    - name: fetch a file from 172.31.37.12
+      fetch:
+        src: /etc/passwd
+        dest: /tmp
+- name: copy a file from controller to mn2
+  hosts: 172.31.40.71
+  become: true
+  tasks:
+   - name: copy a file to 172.31.40.71
+     copy:
+      src: /tmp/172.31.37.12/etc/passwd
+      dest: /tmp

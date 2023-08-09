@@ -1,0 +1,11 @@
+---
+- name: playbook to install git maven tree elinks and apache2
+  hosts: all
+  become: true
+  tasks:
+    - name: install packages
+      apt:
+        name: ["git","maven", "tree","apache2", "elinks"]
+        state: present
+        update_cache: yes
+

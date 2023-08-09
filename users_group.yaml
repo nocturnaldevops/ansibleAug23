@@ -1,0 +1,13 @@
+---
+- name: playbook to create users in a group of servers
+  hosts: myservers
+  become: true
+  tasks:
+    - name: create a user1
+      user:
+       name: "{{user1}}"
+       password: "{{password1}}"
+       shell: "{{shell1}}"
+       comment: "{{desg1}}"
+       uid: "{{uid1}}"
+       home: "{{home1}}"

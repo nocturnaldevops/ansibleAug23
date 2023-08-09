@@ -1,0 +1,12 @@
+user1: sirisha
+user2: mahesh
+password1: 12345
+password2: 98765
+shell1: /bin/bash
+shell2: /bin/sh
+desg1: developer
+desg2: devopsengineer
+home1: /home/sirisha
+home2: /home/mahesh
+uid1: 1010
+uid2: 1011

@@ -1,0 +1,11 @@
+---
+- name: Playbook to uninstall git
+  hosts: all
+  become: true
+  tasks:
+     - name: uninstall git
+       apt:
+         name: git
+         state: absent
+         update_cache: no
+...
